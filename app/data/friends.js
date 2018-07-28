@@ -33,10 +33,52 @@ var friendsArray = [
 
 ];
 
+
+// module.exports = bestFriend;
+
+const surveyStub = {
+  name: '',
+  photo: '',
+  scores: [
+    5, 1, 3, 4, 5, 6, 7, 8, 9, 0
+  ]
+};
+
+// This is looking at just the scores part of the friendsArray.
+// Taking the number and index and then substracting it from the new data from the survey page.
+// Takes the absolute number of those and gives us an array of score differences
+const scoreDifferences = friendsArray.map(({ scores }) => (
+  scores.map(( number, index ) => ( Math.abs(surveyStub.scores[index] - number) ))
+));
+
+// console.log({ scoreDifferences });
+// process.exit();
+
+// Takes the sum of those differences and makes an array of those organized by friend.
+const friendAbsoluteDifference = scoreDifferences.map((friend) => (
+  friend.reduce((acc, number) => (acc + number), 0)
+));
+  
+// console.log({friendAbsoluteDifference});
+
+// This returns the index from the friendAway of the friend with the lowest difference (number)
+const winnerIndex = friendAbsoluteDifference.indexOf(Math.min.apply(null, friendAbsoluteDifference));
+
+// This is the object representing the winner
+const bestFriend = friendsArray[winnerIndex];
+
+// console.log({ winnerIndex, bestFriend });
+
+// // for each friend in friendsArray
+// for (var i = 0; i < friends.length; i++)
+// {for (var i=0; i < scores.length; i_++)
+// if Math.abs(scores[i]-this.scores[i]);
+// }
+// var lowestSoFar = 100;
+// var bestFriend = "";
+
 // Note how we export the array. This makes it accessible to other files using require.
-module.exports = friendsArray;
-
-// for each friend in friendsArray
-
-var lowestSoFar = 100;
-var bestFriend = "";
+module.exports = {
+  friendsArray,
+  bestFriend
+};
