@@ -36,7 +36,7 @@ var friendsArray = [
 
 // module.exports = bestFriend;
 
-const surveyStub = {
+var surveyStub = {
   name: '',
   photo: '',
   scores: [
@@ -47,7 +47,7 @@ const surveyStub = {
 // This is looking at just the scores part of the friendsArray.
 // Taking the number and index and then substracting it from the new data from the survey page.
 // Takes the absolute number of those and gives us an array of score differences
-const scoreDifferences = friendsArray.map(({ scores }) => (
+var scoreDifferences = friendsArray.map(({ scores }) => (
   scores.map(( number, index ) => ( Math.abs(surveyStub.scores[index] - number) ))
 ));
 
@@ -55,17 +55,17 @@ const scoreDifferences = friendsArray.map(({ scores }) => (
 // process.exit();
 
 // Takes the sum of those differences and makes an array of those organized by friend.
-const friendAbsoluteDifference = scoreDifferences.map((friend) => (
+var friendAbsoluteDifference = scoreDifferences.map((friend) => (
   friend.reduce((acc, number) => (acc + number), 0)
 ));
   
 // console.log({friendAbsoluteDifference});
 
-// This returns the index from the friendAway of the friend with the lowest difference (number)
-const winnerIndex = friendAbsoluteDifference.indexOf(Math.min.apply(null, friendAbsoluteDifference));
+// Returns the index from the friendAway of the friend with the lowest difference (number)
+var winnerIndex = friendAbsoluteDifference.indexOf(Math.min.apply(null, friendAbsoluteDifference));
 
-// This is the object representing the winner
-const bestFriend = friendsArray[winnerIndex];
+// The object representing the winner
+var bestFriend = friendsArray[winnerIndex];
 
 // console.log({ winnerIndex, bestFriend });
 

@@ -13,7 +13,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-  <!-- Chosen, a jQuery plugin to make select boxes work better -->
+  <!-- Chosen, a jQuery plugin to make select boxes look better -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
@@ -254,6 +254,7 @@
 
         // AJAX post the data to the friends API.
         $.post("/api/friends", userData, function(data) {
+          console.log(data)
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#match-name").text(data.name);
@@ -261,7 +262,6 @@
 
           // Show the modal with the best match
           $("#results-modal").modal("toggle");
-
         });
       } else {
         alert("You didn't fill out every field.");
