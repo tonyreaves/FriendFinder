@@ -1,14 +1,11 @@
-var tableData = require("../data/friendsArray");
-var waitListData = require("../data/waitinglistData");
+var friends = require("../data/friends");
 
 module.exports = function (app) {
 
-    app.get("/api/tables", function (req, res) {
-        res.json(tableData);
+    app.get("/api/friends", function (req, res) {
+        res.json(friendsArray);
     });
 
-    app.get("/api/waitlist", function (req, res) {
-        res.json(waitListData);
-    });
+
 
 }
