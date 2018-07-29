@@ -1,4 +1,4 @@
-
+ var path = require('path');
 var friendsArray = [
   {
     "name": "Ahmed",
@@ -34,7 +34,7 @@ var friendsArray = [
 
 ];
 
-
+//sample for testing
 var surveyStub = {
   name: '',
   photo: '',
