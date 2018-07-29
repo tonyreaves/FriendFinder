@@ -10,18 +10,18 @@ module.exports = function (app) {
     });
 
     app.get("/api/friends", function (req, res) {
-        res.json(bestFriendName);
+        res.json(match-name);
     });
 
     app.get("/api/friends", function (req, res) {
-        res.json(bestFriendPhoto);
+        res.json(match-photo);
     });
 
     app.post("/api/friends", function(req, res) {
         // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
         // req.body is available since we're using the body-parser middleware
  
-          friendsArray.push(req.body);
+          friendsArray(req.body);
           res.json(true);
     
       });

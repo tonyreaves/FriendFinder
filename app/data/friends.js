@@ -34,7 +34,7 @@ var friendsArray = [
 ];
 
 
-// module.exports = bestFriend;
+
 
 var surveyStub = {
   name: '',
@@ -65,7 +65,7 @@ var friendAbsoluteDifference = scoreDifferences.map((friend) => (
 var winnerIndex = friendAbsoluteDifference.indexOf(Math.min.apply(null, friendAbsoluteDifference));
 
 // The object representing the winner
-var bestFriendName = friendsArray[winnerIndex].name;
+var bestFriend = friendsArray[winnerIndex];
 var bestFriendPhoto = friendsArray[winnerIndex].photo;
 
 // console.log({ winnerIndex, bestFriend });
@@ -81,6 +81,7 @@ var bestFriendPhoto = friendsArray[winnerIndex].photo;
 // Note how we export the array. This makes it accessible to other files using require.
 module.exports = {
   friendsArray,
-  bestFriendName,
-  bestFriendPhoto
+  bestFriend,
 };
+
+friendsArray.push(userData);
