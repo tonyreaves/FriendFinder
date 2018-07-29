@@ -65,7 +65,8 @@ var friendAbsoluteDifference = scoreDifferences.map((friend) => (
 var winnerIndex = friendAbsoluteDifference.indexOf(Math.min.apply(null, friendAbsoluteDifference));
 
 // The object representing the winner
-var bestFriend = friendsArray[winnerIndex];
+var bestFriendName = friendsArray[winnerIndex].name;
+var bestFriendPhoto = friendsArray[winnerIndex].photo;
 
 // console.log({ winnerIndex, bestFriend });
 
@@ -80,5 +81,6 @@ var bestFriend = friendsArray[winnerIndex];
 // Note how we export the array. This makes it accessible to other files using require.
 module.exports = {
   friendsArray,
-  bestFriend
+  bestFriendName,
+  bestFriendPhoto
 };

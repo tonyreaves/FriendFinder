@@ -1,5 +1,7 @@
 var friendsArray = require("../data/friends");
-var bestFriend = require("../data/friends");
+var bestFriendName = require("../data/friends");
+var bestFriendPhoto = require("../data/friends");
+
 
 module.exports = function (app) {
 
@@ -8,7 +10,11 @@ module.exports = function (app) {
     });
 
     app.get("/api/friends", function (req, res) {
-        res.json(bestFriend);
+        res.json(bestFriendName);
+    });
+
+    app.get("/api/friends", function (req, res) {
+        res.json(bestFriendPhoto);
     });
 
     app.post("/api/friends", function(req, res) {
