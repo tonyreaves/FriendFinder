@@ -1,4 +1,4 @@
- var path = require('path');
+var path = require('path');
 var friendsArray = [
   {
     "name": "Ahmed",
@@ -69,17 +69,9 @@ var bestFriendPhoto = friendsArray[winnerIndex].photo;
 
 // console.log({ winnerIndex, bestFriend });
 
-// // for each friend in friendsArray
-// for (var i = 0; i < friends.length; i++)
-// {for (var i=0; i < scores.length; i_++)
-// if Math.abs(scores[i]-this.scores[i]);
-// }
-// var lowestSoFar = 100;
-// var bestFriend = "";
-
 // Note how we export the array. This makes it accessible to other files using require.
 module.exports = {
   bestFriend
 };
 
-// friendsArray.push(userData);
+// userData.push(friendsArray);

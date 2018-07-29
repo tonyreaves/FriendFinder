@@ -1,6 +1,5 @@
 //load data
 var friendsArray = require("../data/friends");
-var bestFriend = require("../data/friends");
 
 //routing
 module.exports = function (app) {
